@@ -1,21 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import { IoCartOutline } from "react-icons/io5";
+import CartWidget from "./CartWidget";
 
 export default function NavBar() {
   return (
     <div>
       <Nav>
-        <div className="logo-container">
+        <div>
           <li>SNKRS</li>
         </div>
-        <div className="list-items-container">
+        <ListItemDiv>
           <li>Home</li>
           <li>Nosotros</li>
           <li>
-            <IoCartOutline />
+            <CartWidget />
           </li>
-        </div>
+        </ListItemDiv>
       </Nav>
     </div>
   );
@@ -24,17 +24,9 @@ export default function NavBar() {
 const Nav = styled.ul`
   display: flex;
   align-items: center;
-  margin: 0;
   padding: 20px;
   justify-content: space-evenly;
   color: #313131;
-
-  .list-items-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 370px;
-  }
 
   li {
     font-size: 18px;
@@ -50,4 +42,11 @@ const Nav = styled.ul`
       color: #b9b9b9;
     }
   }
+`;
+
+const ListItemDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 370px;
 `;
