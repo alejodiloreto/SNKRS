@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import ItemCount from './ItemCount';
 
 export default function ItemListContainer({ greeting }) {
-  return <Greeting>{greeting}</Greeting>;
+  return (
+    <div>
+      <Greeting>{greeting}</Greeting>
+      <ItemCount />
+    </div>
+  );
 }
 
 const Greeting = styled.h1`
