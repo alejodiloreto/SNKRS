@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import { styled } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
+import styled from 'styled-components';
 
-export default function ItemCount() {
+export default function ItemCount(props) {
   const [contador, setContador] = useState(1);
 
-  const stock = 10;
-
   const sumar = () => {
-    if (contador < stock) {
+    if (contador < props.stock) {
       setContador(contador + 1);
     }
   };
@@ -22,51 +19,40 @@ export default function ItemCount() {
 
   return (
     <div>
-      <MyContainer maxWidth="sm">
-        <h5>Nike Air Jordan III</h5>
-        <ControlContainer>
-          <Controles variant="outlined" onClick={restar}>
-            -
-          </Controles>
-          <p>{contador}</p>
-          <Controles variant="outlined" onClick={sumar}>
-            +
-          </Controles>
-        </ControlContainer>
-        <Stock>Stock disponible: {stock}</Stock>
-        <AddToCart variant="outlined" type="submit">
-          Agregar al carrito
-        </AddToCart>
-      </MyContainer>
+      <ControlContainer>
+        <Controles variant="outlined" onClick={restar}>
+          <p>-</p>
+        </Controles>
+        <p>{contador}</p>
+        <Controles variant="outlined" onClick={sumar}>
+          <p>+</p>
+        </Controles>
+      </ControlContainer>
+      <Stock>Stock disponible: {props.stock}</Stock>
     </div>
   );
 }
 
-const MyContainer = styled(Container)({
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-evenly',
-  alignItems: 'center',
-  marginTop: '60px',
-});
+const ControlContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 30px 0px;
 
-const ControlContainer = styled(Container)({
-  display: 'flex',
-  justifyContent: 'space-evenly',
-  alignItems: 'center',
-  margin: '30px 0px',
-});
+  p:nth-child(2) {
+    margin: 0 30px;
+  }
+`;
 
-const Controles = styled(Button)({
-  background: 'linear-gradient(315deg, #3f0d12 0%, #a71d31 74%)',
-  color: 'white',
-});
+const Controles = styled(Button)`
+  background: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
 
-const Stock = styled('h5')({
-  margin: '20px 0',
-});
+  p {
+    color: white;
+  }
+`;
 
-const AddToCart = styled(Button)({
-  background: 'linear-gradient(315deg, #3f0d12 0%, #a71d31 74%)',
-  color: 'white',
-});
+const Stock = styled.h5`
+  margin: 20px 0;
+  text-align: center;
+`;
