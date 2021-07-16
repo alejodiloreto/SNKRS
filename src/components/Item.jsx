@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
 import ItemCount from './ItemCount';
 
 export default function Item(props) {
@@ -8,22 +7,11 @@ export default function Item(props) {
     <StyledDiv>
       <h5>{props.name}</h5>
       <img src={props.image} alt={props.name} width="300px" height="200px" />
-      <p>{props.price}</p>
+      <b>{props.price}</b>
       <ItemCount stock={props.stock} />
-      <AddToCart variant="outlined" type="submit">
-        <p>Agregar al carrito</p>
-      </AddToCart>
     </StyledDiv>
   );
 }
-
-const AddToCart = styled(Button)`
-  background: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
-
-  p {
-    color: white;
-  }
-`;
 
 const StyledDiv = styled.div`
   display: flex;

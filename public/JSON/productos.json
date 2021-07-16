@@ -2,34 +2,39 @@
   {
     "id": 1,
     "title": "Nike Air Jordan I",
-    "price": "24.500 ARS",
+    "description": "El Air Jordan I es una de las zapatillas más vendidas de Nike en relación con la practica del básket, desde sus orígenes siempre destacó por su gran versatilidad sobre la cancha. Adaptándose a diversos estilos de juego y deslumbrando por su calidad.",
+    "price": "29.500 ARS",
     "pictureUrl": "https://cms-cdn.thesolesupplier.co.uk/2017/09/Nike-Air-Jordan-1-OG-High-Chicago_w900.png",
     "stock": 3
   },
   {
     "id": 2,
     "title": "Nike Air Jordan III",
-    "price": "24.000 ARS",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "price": "30.000 ARS",
     "pictureUrl": "https://hypescrape.com/wp-content/uploads/2021/03/Wethenew-Sneakers-France-Air-Jordan-3-Retro-SE-Fire-Red-Denim-1_2000x_961e863a-bfaf-428c-95bc-5e1efa4388d9.png",
-    "stock": 6
+    "stock": 1
   },
   {
     "id": 3,
     "title": "Adidas Yeezy 350",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "price": "22.000 ARS",
     "pictureUrl": "https://cms-cdn.thesolesupplier.co.uk/2017/11/Yeezy-Boost-350-V2-Blue-Tint-B37571-1_w900.png",
-    "stock": 8
+    "stock": 4
   },
   {
     "id": 4,
     "title": "Adidas Nite Jogger",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "price": "16.000 ARS",
     "pictureUrl": "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D720/media/catalog/product/D/B/DB3361_1.png",
-    "stock": 4
+    "stock": 8
   },
   {
     "id": 5,
-    "title": "Air Jordan XI",
+    "title": "Nike Air Jordan XI",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "price": "32.000 ARS",
     "pictureUrl": "https://www.stadiumgoods.com/media/catalog/product/3/7/378037_100_1.png",
     "stock": 3
@@ -37,20 +42,23 @@
   {
     "id": 6,
     "title": "Adidas Stan Smith",
-    "price": "13.000 ARS",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "price": "14.500 ARS",
     "pictureUrl": "https://cdnb.20m.es/quefuede/files/2015/04/Stan_Smith_white_and_green-620x315.png",
-    "stock": 6
+    "stock": 10
   },
   {
     "id": 7,
     "title": "Nike Air Max 97",
-    "price": "24.500 ARS",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "price": "29.000 ARS",
     "pictureUrl": "https://altagamastore.com/wp-content/uploads/2019/08/Nike-Air-Max-1-97-Sean-Wotherspoon-AJ4219-400.png",
-    "stock": 3
+    "stock": 7
   },
   {
     "id": 8,
     "title": "Nike Air Force 1 Just Do It",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "price": "24.000 ARS",
     "pictureUrl": "https://dwtstore.com.ng/wp-content/uploads/2018/10/Nike-Air-Force-1-07-Just-Do-It-Pack-White-AR7719-100.png",
     "stock": 6

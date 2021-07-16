@@ -18,7 +18,7 @@ export default function ItemCount(props) {
   };
 
   return (
-    <div>
+    <ItemCountContainer>
       <ControlContainer>
         <Controles variant="outlined" onClick={restar}>
           <p>-</p>
@@ -29,9 +29,18 @@ export default function ItemCount(props) {
         </Controles>
       </ControlContainer>
       <Stock>Stock disponible: {props.stock}</Stock>
-    </div>
+      <AddToCart variant="outlined" type="submit">
+        <p>Agregar al carrito</p>
+      </AddToCart>
+    </ItemCountContainer>
   );
 }
+
+const ItemCountContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
 
 const ControlContainer = styled.div`
   display: flex;
@@ -55,4 +64,17 @@ const Controles = styled(Button)`
 const Stock = styled.h5`
   margin: 20px 0;
   text-align: center;
+`;
+
+const AddToCart = styled(Button)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+
+  p {
+    color: white;
+    text-transform: none;
+    font-size: 16px;
+  }
 `;
