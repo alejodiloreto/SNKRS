@@ -26,6 +26,7 @@ export default function ItemList() {
           return (
             <Item
               key={element.id}
+              id={element.id}
               name={element.title}
               price={element.price}
               image={element.pictureUrl}

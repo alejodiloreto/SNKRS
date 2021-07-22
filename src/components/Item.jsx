@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ItemCount from './ItemCount';
 
-export default function Item(props) {
+export default function Item({ name, id, image, price, stock }) {
   return (
     <StyledDiv>
-      <h5>{props.name}</h5>
-      <img src={props.image} alt={props.name} width="300px" height="200px" />
-      <b>{props.price}</b>
-      <ItemCount stock={props.stock} />
+      <h5>{name}</h5>
+      <Link to={`/item/${id}`}>
+        <img src={image} alt={name} width="300px" height="200px" />
+      </Link>
+      <b>{price}</b>
+      <ItemCount stock={stock} />
     </StyledDiv>
   );
 }

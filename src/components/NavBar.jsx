@@ -1,17 +1,25 @@
-import React from "react";
-import styled from "styled-components";
-import CartWidget from "./CartWidget";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import CartWidget from './CartWidget';
+import SimpleMenu from './SimpleMenu';
 
 export default function NavBar() {
   return (
     <div>
       <Nav>
         <div>
-          <li>SNKRS</li>
+          <li>
+            <Link to="/">SNKRS</Link>
+          </li>
         </div>
         <ListItemDiv>
-          <li>Home</li>
-          <li>Nosotros</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <SimpleMenu />
+          </li>
           <li>
             <CartWidget />
           </li>
@@ -33,6 +41,11 @@ const Nav = styled.ul`
     list-style: none;
     cursor: pointer;
     transition: all 0.2s;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     &:last-child {
       font-size: 30px;

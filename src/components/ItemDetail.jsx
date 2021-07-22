@@ -2,18 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import ItemCount from './ItemCount';
 
-export default function ItemDetail(props) {
+export default function ItemDetail({ image, name, description, price, stock }) {
   return (
     <Container>
       <ImgContainer>
-        <img src={props.image} alt={props.name} width="550px" />
+        <img src={image} alt={name} width="550px" />
       </ImgContainer>
 
       <InfoContainer>
-        <h3>{props.name}</h3>
-        <p>{props.description}</p>
-        <h3>{props.price}</h3>
-        <ItemCount stock={props.stock} />
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <h3>{price}</h3>
+        <ItemCount stock={stock} />
       </InfoContainer>
     </Container>
   );
