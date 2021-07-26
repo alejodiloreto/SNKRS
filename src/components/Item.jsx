@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import ItemCount from './ItemCount';
 
 export default function Item({ name, id, image, price, stock }) {
   return (
@@ -11,7 +10,6 @@ export default function Item({ name, id, image, price, stock }) {
         <img src={image} alt={name} width="300px" height="200px" />
       </Link>
       <b>{price}</b>
-      <ItemCount stock={stock} />
     </StyledDiv>
   );
 }

@@ -3,18 +3,22 @@ import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 
 export default function ItemCount(props) {
-  const [contador, setContador] = useState(1);
+  const [cantidad, setCantidad] = useState(1);
 
   const sumar = () => {
-    if (contador < props.stock) {
-      setContador(contador + 1);
+    if (cantidad < props.stock) {
+      setCantidad(cantidad + 1);
     }
   };
 
   const restar = () => {
-    if (contador > 1) {
-      setContador(contador - 1);
+    if (cantidad > 1) {
+      setCantidad(cantidad - 1);
     }
+  };
+
+  const onAdd = () => {
+    props.setOculto(false);
   };
 
   return (
@@ -23,13 +27,13 @@ export default function ItemCount(props) {
         <Controles variant="outlined" onClick={restar}>
           <p>-</p>
         </Controles>
-        <p>{contador}</p>
+        <p>{cantidad}</p>
         <Controles variant="outlined" onClick={sumar}>
           <p>+</p>
         </Controles>
       </ControlContainer>
       <Stock>Stock disponible: {props.stock}</Stock>
-      <AddToCart variant="outlined" type="submit">
+      <AddToCart variant="outlined" type="submit" onClick={onAdd}>
         <p>Agregar al carrito</p>
       </AddToCart>
     </ItemCountContainer>
