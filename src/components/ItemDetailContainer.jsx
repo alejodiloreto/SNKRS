@@ -31,6 +31,7 @@ export default function ItemDetailContainer() {
         <Spinner />
       ) : (
         <ItemDetail
+          item={item}
           key={item.id}
           id={item.id}
           name={item.title}

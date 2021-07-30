@@ -1,24 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 
-export default function ItemCount(props) {
-  const [cantidad, setCantidad] = useState(1);
-
+export default function ItemCount({ stock, valor, setValor }) {
   const sumar = () => {
-    if (cantidad < props.stock) {
-      setCantidad(cantidad + 1);
+    if (valor < stock) {
+      setValor(valor + 1);
     }
   };
 
   const restar = () => {
-    if (cantidad > 1) {
-      setCantidad(cantidad - 1);
+    if (valor > 1) {
+      setValor(valor - 1);
     }
-  };
-
-  const onAdd = () => {
-    props.setOculto(false);
   };
 
   return (
@@ -27,15 +21,12 @@ export default function ItemCount(props) {
         <Controles variant="outlined" onClick={restar}>
           <p>-</p>
         </Controles>
-        <p>{cantidad}</p>
+        <p>{valor}</p>
         <Controles variant="outlined" onClick={sumar}>
           <p>+</p>
         </Controles>
       </ControlContainer>
-      <Stock>Stock disponible: {props.stock}</Stock>
-      <AddToCart variant="outlined" type="submit" onClick={onAdd}>
-        <p>Agregar al carrito</p>
-      </AddToCart>
+      <Stock>Stock disponible: {stock}</Stock>
     </ItemCountContainer>
   );
 }
@@ -68,17 +59,4 @@ const Controles = styled(Button)`
 const Stock = styled.h5`
   margin: 20px 0;
   text-align: center;
-`;
-
-const AddToCart = styled(Button)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
-
-  p {
-    color: white;
-    text-transform: none;
-    font-size: 16px;
-  }
 `;
