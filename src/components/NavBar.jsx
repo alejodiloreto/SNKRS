@@ -2,12 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import SimpleMenu from './SimpleMenu';
-import { useCartContext } from './CartContext';
-import { IoCartOutline } from 'react-icons/io5';
+import CartWidget from './CartWidget';
 
 export default function NavBar() {
-  const { cartCount } = useCartContext();
-
   return (
     <div>
       <Nav>
@@ -25,8 +22,7 @@ export default function NavBar() {
           </li>
           <li>
             <Link to="/cart">
-              <IoCartOutline />
-              {cartCount > 0 ? cartCount : <></>}
+              <CartWidget />
             </Link>
           </li>
         </ListItemDiv>

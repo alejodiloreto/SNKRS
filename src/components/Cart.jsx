@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 
 export default function Cart() {
-  const { cartItem, clear, removeItem } = useCartContext();
-
+  const { cartItem, clear, removeItem, cartCount, totalPrice } =
+    useCartContext();
+  console.log(totalPrice);
   return (
     <Container>
       <h1>Carrito</h1>
@@ -39,11 +40,18 @@ export default function Cart() {
             );
           })}
       </ItemsDiv>
-      <ButtonDiv>
-        <Buttons onClick={clear}>
-          <p>Vaciar Carrito</p>
-        </Buttons>
-      </ButtonDiv>
+      {cartCount > 0 ? (
+        <>
+          <Total>Total: ${totalPrice} </Total>
+          <Buttons onClick={clear}>
+            <p>Vaciar Carrito</p>
+          </Buttons>
+        </>
+      ) : (
+        <>
+          <Message>No hay productos seleccionados</Message>
+        </>
+      )}
     </Container>
   );
 }
@@ -67,7 +75,7 @@ const Buttons = styled(Button)`
   }
 `;
 
-const ButtonDiv = styled.div`
+const Total = styled.b`
   margin: 20px auto;
 `;
 
@@ -82,4 +90,8 @@ const ItemDiv = styled.div`
 
 const ItemsDiv = styled.div`
   display: flex;
+`;
+
+const Message = styled.p`
+  margin: 40px 0;
 `;
