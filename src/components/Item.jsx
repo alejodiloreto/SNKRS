@@ -9,7 +9,8 @@ export default function Item({ name, id, image, price, stock }) {
       <Link to={`/item/${id}`}>
         <img src={image} alt={name} width="300px" height="200px" />
       </Link>
-      <b>{price}</b>
+      <b>${price}</b>
+      <p>{stock} unidades disponibles</p>
     </StyledDiv>
   );
 }
@@ -27,6 +28,10 @@ const StyledDiv = styled.div`
     -webkit-box-shadow: 5px 5px 14px 6px rgba(0, 0, 0, 0.33);
     box-shadow: 5px 5px 14px 6px rgba(0, 0, 0, 0.33);
     transition: all 0.3s;
+  }
+
+  p {
+    margin-top: 20px;
   }
 
   img {

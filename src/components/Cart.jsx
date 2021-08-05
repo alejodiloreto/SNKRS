@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 export default function Cart() {
   const { cartItem, clear, removeItem, cartCount, totalPrice } =
     useCartContext();
-  console.log(totalPrice);
+
   return (
     <Container>
       <h1>Carrito</h1>

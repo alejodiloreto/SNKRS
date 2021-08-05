@@ -26,15 +26,17 @@ export default function ItemDetail({
       <InfoContainer>
         <h3>{name}</h3>
         <p>{description}</p>
-        <h3>{price}</h3>
-        <ItemCount
-          stock={stock}
-          valor={valor}
-          setValor={setValor}
-          onClick={() => {
-            addItem(item, valor);
-          }}
-        />
+        <h3>${price}</h3>
+        {
+          <ItemCount
+            stock={stock}
+            valor={valor}
+            setValor={setValor}
+            onClick={() => {
+              addItem(item, valor);
+            }}
+          />
+        }
         {valor === 0 ? (
           <></>
         ) : (

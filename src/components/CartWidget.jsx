@@ -8,8 +8,14 @@ function CartWidget() {
 
   return (
     <StyledDiv>
-      <IoCartOutline />
-      {cartCount > 0 ? <Count>({cartCount})</Count> : <></>}
+      {cartCount > 0 ? (
+        <>
+          {' '}
+          <IoCartOutline /> <Count>({cartCount})</Count>{' '}
+        </>
+      ) : (
+        <></>
+      )}
     </StyledDiv>
   );
 }

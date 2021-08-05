@@ -1,44 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import styled from 'styled-components';
+import { getFirestore } from '../firebase';
 
 export default function ItemDetailContainer() {
-  const [item, setItem] = useState();
+  const [producto, setProducto] = useState();
   let { productID } = useParams();
 
   useEffect(() => {
-    const getItems = async () => {
-      const items = await fetch('../JSON/productos.json');
-      const respuesta = await items.json();
+    const firestore = getFirestore();
+    const collection = firestore.collection('products');
+    let query = collection.doc(productID).get();
 
-      respuesta.forEach((element) => {
-        if (element.id === productID) {
-          setItem(element);
-          return;
-        }
+    query
+      .then((doc) => {
+        setProducto(doc.data());
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    };
-
-    setTimeout(() => {
-      getItems();
-    }, 1000);
   }, [productID]);
+
   return (
     <StyledDiv>
-      {item === undefined ? (
+      {producto === undefined ? (
         <Spinner />
       ) : (
         <ItemDetail
-          item={item}
-          key={item.id}
-          id={item.id}
-          name={item.title}
-          description={item.description}
-          price={item.price}
-          image={item.pictureUrl}
-          stock={item.stock}
+          item={producto}
+          key={producto.id}
+          id={producto.id}
+          name={producto.title}
+          description={producto.description}
+          price={producto.price}
+          image={producto.pictureUrl}
+          stock={producto.stock}
         />
       )}
     </StyledDiv>

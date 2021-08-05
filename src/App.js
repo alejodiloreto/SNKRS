@@ -29,8 +29,8 @@ function App() {
               <ItemDetailContainer />
             </Route>
             <Route path="/cart" exact component={Cart} />
+            <Redirect to="/" />
           </Switch>
-          <Redirect to="/" />
         </Router>
       </CartProvider>
     </div>

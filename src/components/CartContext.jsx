@@ -25,7 +25,7 @@ const CartProvider = ({ children }) => {
       const repeatedIndex = cartItem.findIndex(
         (product) => product.item.id === item.id
       );
-      if (copy[repeatedIndex].ite.stock >= copy[repeatedIndex].qty + qty) {
+      if (copy[repeatedIndex].item.stock >= copy[repeatedIndex].qty + qty) {
         copy[repeatedIndex].qty = copy[repeatedIndex].qty + qty;
         setCartCount((prev) => prev + qty);
       } else {
