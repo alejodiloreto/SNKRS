@@ -8,8 +8,7 @@ import {
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
-import CategoryFilter from './components/CategoryFilter';
-import CartProvider from './components/CartContext';
+import CartProvider from './CartContext';
 import Cart from './components/Cart';
 
 function App() {
@@ -23,7 +22,7 @@ function App() {
               <ItemListContainer greeting="Bienvenido a SNKRS" />
             </Route>
             <Route exact path="/category/:categoryID">
-              <CategoryFilter />
+              <ItemListContainer />
             </Route>
             <Route exact path="/item/:productID">
               <ItemDetailContainer />

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Form from './Form';
-import { useCartContext } from './CartContext';
+import { useCartContext } from '../CartContext';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import { getFirestore } from '../firebase';
@@ -8,18 +8,13 @@ import { getFirestore } from '../firebase';
 export default function Cart() {
   const [confirmacion, setConfirmacion] = useState(false);
 
-  const [datos, setDatos] = useState({
-    name: '',
-    phone: '',
-    email: '',
-  });
-
   const { cartItem, clear, removeItem, cartCount, totalPrice } =
     useCartContext();
 
   const actualDate = new Date();
 
-  const createOrder = () => {
+  const createOrder = (datos) => {
+    console.log(datos);
     const nueva_orden = {
       buyer: datos,
       items: cartItem,
@@ -76,7 +71,7 @@ export default function Cart() {
           <Buttons onClick={clear}>
             <p>Vaciar carrito</p>
           </Buttons>
-          <Form datos={datos} setDatos={setDatos} createOrder={createOrder} />
+          <Form createOrder={createOrder} />
         </>
       ) : (
         <>

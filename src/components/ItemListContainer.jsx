@@ -6,41 +6,37 @@ import { useEffect, useState } from 'react';
 
 export default function ItemListContainer({ greeting }) {
   const [producto, setProducto] = useState([]);
-  let { productID } = useParams();
+  const { categoryID } = useParams();
+  const [llamada, setLlamada] = useState([]);
 
   useEffect(() => {
-    const firestore = getFirestore();
-    const collection = firestore.collection('products');
+    const getProducts = async () => {
+      const firestore = getFirestore();
+      const collection = await firestore.collection('products');
+      let query = await collection.get();
 
-    if (productID === undefined) {
-      const query = collection.get();
-      query
-        .then((resultado) => {
-          const documentos = resultado.docs;
-          const productos = documentos.map((doc) => {
-            return { id: doc.id, ...doc.data() };
-          });
-          setProducto(productos);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      let query = collection.where('categoryID', '==', productID);
-      query = query.get();
-      query
-        .then((resultado) => {
-          const documentos = resultado.docs;
-          const productos = documentos.map((doc) => {
-            return { id: doc.id, ...doc.data() };
-          });
-          setProducto(productos);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }, [productID]);
+      let newArray = [];
+      query.forEach((element) => {
+        newArray.push(element.data());
+      });
+      setLlamada(newArray);
+    };
+    getProducts();
+  }, []);
+
+  useEffect(() => {
+    let newArray = [];
+    llamada.forEach((element) => {
+      if (!categoryID) {
+        newArray.push(element);
+      } else {
+        if (element.category === categoryID) {
+          newArray.push(element);
+        }
+      }
+    });
+    setProducto(newArray);
+  }, [categoryID, llamada]);
 
   return (
     <Container>

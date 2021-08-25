@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoCartOutline } from 'react-icons/io5';
-import { useCartContext } from './CartContext';
+import { useCartContext } from '../CartContext';
 import styled from 'styled-components';
 
 function CartWidget() {

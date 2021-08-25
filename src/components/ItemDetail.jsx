@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ItemCount from './ItemCount';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import { useCartContext } from './CartContext';
+import { useCartContext } from '../CartContext';
 
 export default function ItemDetail({
   image,
